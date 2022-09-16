@@ -100,7 +100,6 @@ func createSecret(ctx context.Context, client v1.SecretInterface) (*corev1.Secre
 }
 
 func updateSecrets(ctx context.Context, client v1.SecretInterface, secrets *corev1.SecretList) error {
-
 	g, ctx := errgroup.WithContext(ctx)
 	total := len(secrets.Items)
 	for i := 0; i < total; i += workers {
